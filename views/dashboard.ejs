@@ -118,7 +118,16 @@
         }
 
         .error {
-            color: #ff4444;
+            color: green;
+        }
+        .navbar a{
+            border: 2px solid white;
+            border-radius: 2vw;
+            padding: 1vw;
+        }
+        .navbar a:hover{
+color: #333;
+background-color: white;
         }
     </style>
 </head>
@@ -177,7 +186,7 @@
                 document.getElementById("prompts").innerHTML = promptsHtml;
             } catch (error) {
                 console.error("Error fetching data:", error);
-                document.getElementById("prompts").innerHTML = `<div class="error">Failed to load prompts. Please try again.</div>`;
+                document.getElementById("prompts").innerHTML = `<div class="error">No prompts to view </div>`;
             }
         }
 
