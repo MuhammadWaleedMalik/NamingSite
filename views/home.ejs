@@ -139,6 +139,7 @@
             <button  onclick="window.location.href='/signup'">Sign Up</button>
             <button onclick="window.location.href='/login'">Login</button>
             <button onclick="window.location.href='/dashboard'">Dashboard</button>
+            <button id="admin" onclick="window.location.href='/admin'">Admin</button>
             <button id="logout-button" style="display: none;">Logout</button>
 
         </div>
@@ -163,6 +164,13 @@
 
         document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("token");
+        const admin=localStorage.getItem('admin')
+
+        if(admin){
+    document.getElementById('admin').style.display = 'block';
+} else {
+    document.getElementById('admin').style.display = 'none';
+}
 
         // Redirect to login page if no token
         
@@ -184,6 +192,7 @@
         }
         logoutButton.addEventListener('click', () => {
             localStorage.removeItem('token'); // Clear token
+            localStorage.removeItem('admin'); // Clear token
             location.reload(); // Reload page
         });
     });
